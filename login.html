@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            background:#1e1e2f;
+            color:white;
+            font-family:Poppins;
+        }
+        .box{
+            background:#2a2a40;
+            padding:30px;
+            border-radius:10px;
+            text-align:center;
+        }
+        input{
+            margin:10px;
+            padding:10px;
+            border:none;
+            border-radius:5px;
+        }
+        button{
+            padding:10px 20px;
+            border:none;
+            background:#ff6ec7;
+            color:white;
+            border-radius:5px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2>Login</h2>
+        <input type="text" id="user" placeholder="Username"><br>
+        <input type="password" id="pass" placeholder="Password"><br>
+        <button onclick="login()">Login</button>
+    </div>
+
+<script>
+function login(){
+    let u = document.getElementById("user").value;
+    let p = document.getElementById("pass").value;
+
+    if(u === "admin" && p === "1234"){
+        localStorage.setItem("loggedIn", "true");
+        window.location.href = "index.html";
+    } else {
+        alert("Wrong login!");
+    }
+}
+</script>
+
+</body>
+</html>
